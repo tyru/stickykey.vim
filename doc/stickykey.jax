@@ -47,13 +47,19 @@ CtrlキーとOのキーを一緒に押すのではなく
 マッピング							*stickykey-mappings*
 
 <Plug>(stickykey-ctrl)
+<Plug>(stickykey-ctrl-remap)
 	Ctrlキー用のスティッキーキーです。
+	<Plug>(stickykey-ctrl-remap)は入力を再帰的に展開します。
 
 <Plug>(stickykey-alt)
+<Plug>(stickykey-alt-remap)
 	Altキー用のスティッキーキーです。
+	<Plug>(stickykey-alt-remap)は入力を再帰的に展開します。
 
 <Plug>(stickykey-shift)
+<Plug>(stickykey-shift-remap)
 	Shiftキー用のスティッキーキーです。
+	<Plug>(stickykey-shift-remap)は入力を再帰的に展開します。
 
 
 ==============================================================================

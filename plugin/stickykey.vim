@@ -19,10 +19,10 @@ endif
 " }}}
 
 " Mappings {{{
-func! s:map(modes, lhs, rhs_func) "{{{
+func! s:map(modes, remap_p, lhs, rhs_func) "{{{
     for mode in split(a:modes, '\zs')
         execute
-        \   mode . 'noremap'
+        \   printf('%s%smap', mode, (a:remap_p ? '' : 'nore'))
         \   '<silent><expr>'
         \   a:lhs
         \   printf('%s()', a:rhs_func)
@@ -34,10 +34,15 @@ endfunc "}}}
 " call s:map('nvoicl', '<Plug>(stickykey-shift)', 'stickykey#shift')
 " call s:map('nvoicl', '<Plug>(stickykey-command)', 'stickykey#command')
 
-call s:map('icsl', '<Plug>(stickykey-ctrl)', 'stickykey#ctrl')
-call s:map('icsl', '<Plug>(stickykey-alt)', 'stickykey#alt')
-call s:map('icsl', '<Plug>(stickykey-shift)', 'stickykey#shift')
-call s:map('icsl', '<Plug>(stickykey-command)', 'stickykey#command')
+call s:map('icsl', 0, '<Plug>(stickykey-ctrl)', 'stickykey#ctrl')
+call s:map('icsl', 0, '<Plug>(stickykey-alt)', 'stickykey#alt')
+call s:map('icsl', 0, '<Plug>(stickykey-shift)', 'stickykey#shift')
+call s:map('icsl', 0, '<Plug>(stickykey-command)', 'stickykey#command')
+
+call s:map('icsl', 1, '<Plug>(stickykey-ctrl-remap)', 'stickykey#ctrl')
+call s:map('icsl', 1, '<Plug>(stickykey-alt-remap)', 'stickykey#alt')
+call s:map('icsl', 1, '<Plug>(stickykey-shift-remap)', 'stickykey#shift')
+call s:map('icsl', 1, '<Plug>(stickykey-command-remap)', 'stickykey#command')
 " }}}
 
 " Restore 'cpoptions' {{{
