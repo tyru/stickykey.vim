@@ -66,6 +66,11 @@ screenのホットキーを入力するのはちょっと面倒です。
 	Shiftキー用のスティッキーキーです。
 	<Plug>(stickykey-shift-remap)は入力を再帰的に展開します。
 
+<Plug>(stickykey-command)
+<Plug>(stickykey-command-remap)
+	MacのCommandキー用のスティッキーキーです。|<D-|
+	<Plug>(stickykey-command-remap)は入力を再帰的に展開します。
+
 
 ==============================================================================
 変数						*stickykey-variables*
