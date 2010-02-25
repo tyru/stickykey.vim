@@ -51,25 +51,24 @@ screenのホットキーを入力するのはちょっと面倒です。
 ==============================================================================
 マッピング							*stickykey-mappings*
 
+<Plug>(stickykey-...-remap)は再帰的に働きます。
+
+
 <Plug>(stickykey-ctrl)
 <Plug>(stickykey-ctrl-remap)
 	Ctrlキー用のスティッキーキーです。
-	<Plug>(stickykey-ctrl-remap)は入力を再帰的に展開します。
 
 <Plug>(stickykey-alt)
 <Plug>(stickykey-alt-remap)
 	Altキー用のスティッキーキーです。
-	<Plug>(stickykey-alt-remap)は入力を再帰的に展開します。
 
 <Plug>(stickykey-shift)
 <Plug>(stickykey-shift-remap)
 	Shiftキー用のスティッキーキーです。
-	<Plug>(stickykey-shift-remap)は入力を再帰的に展開します。
 
 <Plug>(stickykey-command)
 <Plug>(stickykey-command-remap)
 	MacのCommandキー用のスティッキーキーです。|<D-|
-	<Plug>(stickykey-command-remap)は入力を再帰的に展開します。
 
 
 ==============================================================================
@@ -92,7 +91,7 @@ g:stickykey_when_no_escaped_key			string (default: "thru")
 ==============================================================================
 Changelog					*stickykey-changelog*
 
-See git-log :)
+See git-log and www.vim.org release notes :)
 
 ==============================================================================
 vim:tw=78:fo=tcq2mM:ts=8:ft=help:norl:noet:fdm=marker:fen
