@@ -6,6 +6,8 @@ let s:save_cpo = &cpo
 set cpo&vim
 " }}}
 
+
+
 " TODO
 " - Support mapmode-nxo (using feedkeys()).
 " - Like CapsLock, consistent sticky key.
@@ -13,7 +15,6 @@ set cpo&vim
 "    because submode.vim does not support
 "    mapping with arpeggio.vim
 
-" Functions {{{
 let s:CTRL = 'C'
 let s:ALT = 'M'
 let s:SHIFT = 'S'
@@ -83,7 +84,7 @@ function! s:meta_key(key_id, char) "{{{
     return eval(printf('"\<%s-%s>"', a:key_id, a:char))
 endfunction "}}}
 
-" }}}
+
 
 " Restore 'cpoptions' {{{
 let &cpo = s:save_cpo
