@@ -38,33 +38,25 @@ endfunc "}}}
 
 
 func! s:get_sticky(key_id) "{{{
-    try
-        return s:get_keycode(a:key_id)
-    catch /^return$/
-        " nop.
+    let opt = g:stickykey_when_no_escaped_key
+    if opt !~# '^\%(nop\|thru\|again\)$'
+        call s:warn(opt . ": invalid g:stickykey_when_no_escaped_key's value")
         return ''
-    endtry
-endfunc "}}}
+    endif
 
-func! s:get_keycode(key_id) "{{{
     while 1
         " TODO When getchar(1) is false.
         let c = s:getchar()
-
         if getcharmod()    " If key is escaped with meta key.
-            " Too long :p
-            let opt = g:stickykey_when_no_escaped_key
-
             if opt ==# 'nop'
-                call s:warn('no escaped key.')
-                throw 'return'
+                return ''
             elseif opt ==# 'thru'
                 return c
             elseif opt ==# 'again'
                 continue
             else
                 call s:warn(opt . ": invalid g:stickykey_when_no_escaped_key's value")
-                throw 'return'
+                return ''
             endif
         else
             return s:meta_key(a:key_id, c) 
