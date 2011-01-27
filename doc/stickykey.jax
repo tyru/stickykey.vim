@@ -93,7 +93,11 @@ g:stickykey_when_no_escaped_key			string (default: "thru")
 ==============================================================================
 Changelog					*stickykey-changelog*
 
-See git-log and www.vim.org release notes :)
+0.0.0:
+- Initial upload
+0.0.1:
+- refactoring
+- add experimental options to g:stickykey_when_no_escaped_key ("input", "mapping")
 
 ==============================================================================
 vim:tw=78:fo=tcq2mM:ts=8:ft=help:norl:noet:fdm=marker:fen
