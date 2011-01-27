@@ -40,7 +40,7 @@ endfunction "}}}
 
 function! s:do_sticky(key_id) "{{{
     let opt = g:stickykey_when_no_escaped_key
-    if opt !~# '^\%(nop\|thru\|again\)$'
+    if opt !~# '^\%(nop\|thru\|again\|input\|mapping\)$'
         call s:warn(opt . ": invalid g:stickykey_when_no_escaped_key's value")
         return ''
     endif
@@ -55,6 +55,10 @@ function! s:do_sticky(key_id) "{{{
                 return c
             elseif opt ==# 'again'
                 continue
+            elseif opt ==# 'input'
+                " TODO
+            elseif opt ==# 'mapping'
+                " TODO
             else
                 call s:warn(opt . ": invalid g:stickykey_when_no_escaped_key's value")
                 return ''
