@@ -19,7 +19,7 @@ endif
 " }}}
 
 " Mappings {{{
-func! s:map(modes, remap_p, lhs, rhs_func) "{{{
+function! s:map(modes, remap_p, lhs, rhs_func) "{{{
     for mode in split(a:modes, '\zs')
         execute
         \   printf('%s%smap', mode, (a:remap_p ? '' : 'nore'))
@@ -27,7 +27,7 @@ func! s:map(modes, remap_p, lhs, rhs_func) "{{{
         \   a:lhs
         \   printf('%s()', a:rhs_func)
     endfor
-endfunc "}}}
+endfunction "}}}
 
 call s:map('icsl', 0, '<Plug>(stickykey-ctrl)', 'stickykey#ctrl')
 call s:map('icsl', 0, '<Plug>(stickykey-alt)', 'stickykey#alt')

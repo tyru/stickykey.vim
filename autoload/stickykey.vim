@@ -19,25 +19,25 @@ let s:ALT = 'M'
 let s:SHIFT = 'S'
 let s:COMMAND = 'D'    " Only Macintosh has this key.
 
-func! stickykey#ctrl() "{{{
+function! stickykey#ctrl() "{{{
     return s:get_sticky(s:CTRL)
-endfunc "}}}
+endfunction "}}}
 
-func! stickykey#alt() "{{{
+function! stickykey#alt() "{{{
     return s:get_sticky(s:ALT)
-endfunc "}}}
+endfunction "}}}
 
-func! stickykey#shift() "{{{
+function! stickykey#shift() "{{{
     return s:get_sticky(s:SHIFT)
-endfunc "}}}
+endfunction "}}}
 
-func! stickykey#command() "{{{
+function! stickykey#command() "{{{
     return s:get_sticky(s:COMMAND)
-endfunc "}}}
+endfunction "}}}
 
 
 
-func! s:get_sticky(key_id) "{{{
+function! s:get_sticky(key_id) "{{{
     let opt = g:stickykey_when_no_escaped_key
     if opt !~# '^\%(nop\|thru\|again\)$'
         call s:warn(opt . ": invalid g:stickykey_when_no_escaped_key's value")
@@ -64,24 +64,24 @@ func! s:get_sticky(key_id) "{{{
     endwhile
 
     call s:warn('sorry, internal error.')
-endfunc "}}}
+endfunction "}}}
 
 
 
-func! s:warn(msg) "{{{
+function! s:warn(msg) "{{{
     echohl WarningMsg
     echomsg a:msg
     echohl None
-endfunc "}}}
+endfunction "}}}
 
-func! s:getchar(...) "{{{
+function! s:getchar(...) "{{{
     let c = call('getchar', a:000)
     return type(c) == type("") ? c : nr2char(c)
-endfunc "}}}
+endfunction "}}}
 
-func! s:meta_key(key_id, char) "{{{
+function! s:meta_key(key_id, char) "{{{
     return eval(printf('"\<%s-%s>"', a:key_id, a:char))
-endfunc "}}}
+endfunction "}}}
 
 " }}}
 
