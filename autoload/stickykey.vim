@@ -21,24 +21,24 @@ let s:SHIFT = 'S'
 let s:COMMAND = 'D'    " Only Macintosh has this key.
 
 function! stickykey#ctrl() "{{{
-    return s:get_sticky(s:CTRL)
+    return s:do_sticky(s:CTRL)
 endfunction "}}}
 
 function! stickykey#alt() "{{{
-    return s:get_sticky(s:ALT)
+    return s:do_sticky(s:ALT)
 endfunction "}}}
 
 function! stickykey#shift() "{{{
-    return s:get_sticky(s:SHIFT)
+    return s:do_sticky(s:SHIFT)
 endfunction "}}}
 
 function! stickykey#command() "{{{
-    return s:get_sticky(s:COMMAND)
+    return s:do_sticky(s:COMMAND)
 endfunction "}}}
 
 
 
-function! s:get_sticky(key_id) "{{{
+function! s:do_sticky(key_id) "{{{
     let opt = g:stickykey_when_no_escaped_key
     if opt !~# '^\%(nop\|thru\|again\)$'
         call s:warn(opt . ": invalid g:stickykey_when_no_escaped_key's value")
