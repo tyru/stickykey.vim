@@ -71,6 +71,18 @@ g:stickykey_when_no_escaped_key			string (default: "thru")
 			Execute key without escaping with meta key.
 		"again":
 			Dispose current key input, wait next input again.
+		"input" (Experimental):
+			If input key is pressed with any modifier keys,
+			return the input directly.
+			for example, stickeykey was
+			invoked by <Plug>(stickykey-shift),
+			and input is <C-a>, return <C-a>.
+		"mapping" (Experimental):
+			If input key is pressed with any modifier keys,
+			see invoked <Plug> key.
+			for example, stickeykey was
+			invoked by <Plug>(stickykey-shift),
+			and input is <C-a>, return <S-a>.
 
 }}}
 }}}

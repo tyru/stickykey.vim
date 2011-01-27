@@ -75,6 +75,19 @@ g:stickykey_when_no_escaped_key			string (default: "thru")
 			キーをメタキーで修飾せず実行します。
 		"again":
 			受け取ったキー入力を捨ててもう一回入力を受け付けます。
+		"input" (Experimental):
+			もしキーが修飾キーと共に入力されたなら、
+			その入力をそのまま返す。
+			例えば、stickeykeyが<Plug>(stickykey-shift)
+			によって実行され、入力されたキーが<C-a>だった場合、
+			stickykeyは<C-a>を返す。
+
+		"mapping" (Experimental):
+			もしキーが修飾キーと共に入力されたなら、
+			実行された<Plug>マッピングの修飾キーを優先する。
+			例えば、stickeykeyが<Plug>(stickykey-shift)
+			によって実行され、入力されたキーが<C-a>だった場合、
+			stickykeyは<S-a>を返す。
 
 
 ==============================================================================
