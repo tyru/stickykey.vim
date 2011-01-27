@@ -29,11 +29,6 @@ func! s:map(modes, remap_p, lhs, rhs_func) "{{{
     endfor
 endfunc "}}}
 
-" call s:map('nvoicl', '<Plug>(stickykey-ctrl)', 'stickykey#ctrl')
-" call s:map('nvoicl', '<Plug>(stickykey-alt)', 'stickykey#alt')
-" call s:map('nvoicl', '<Plug>(stickykey-shift)', 'stickykey#shift')
-" call s:map('nvoicl', '<Plug>(stickykey-command)', 'stickykey#command')
-
 call s:map('icsl', 0, '<Plug>(stickykey-ctrl)', 'stickykey#ctrl')
 call s:map('icsl', 0, '<Plug>(stickykey-alt)', 'stickykey#alt')
 call s:map('icsl', 0, '<Plug>(stickykey-shift)', 'stickykey#shift')
