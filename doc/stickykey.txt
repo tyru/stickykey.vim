@@ -89,7 +89,8 @@ g:stickykey_when_no_escaped_key			string (default: "thru")
 ==============================================================================
 Changelog					*stickykey-changelog* {{{
 
-See git-log and www.vim.org release notes :)
+0.0.0:
+- Initial upload
 
 }}}
 ==============================================================================
