@@ -58,7 +58,7 @@ function! s:do_sticky(key_id) "{{{
             elseif opt ==# 'input'
                 " TODO
             elseif opt ==# 'mapping'
-                " TODO
+                return s:meta_key(a:key_id, c)
             else
                 call s:warn(opt . ": invalid g:stickykey_when_no_escaped_key's value")
                 return ''
