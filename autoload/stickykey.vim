@@ -109,7 +109,8 @@ function! s:getcharmod() "{{{
     \]
     let i = len(r) - 1
     while 1
-        if charmod >= float2nr(pow(2, i + 1))
+        let j = float2nr(pow(2, i + 1))
+        if charmod >= j
             let r[key_table[i]] = 1
             let charmod -= j
             if charmod < 0
