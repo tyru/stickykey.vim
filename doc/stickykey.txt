@@ -1,6 +1,6 @@
 *stickykey.txt*		You don't need press very far away meta keys
 
-Version: 0.0.1
+Version: 0.0.1a
 Author : tyru <tyru.exe@gmail.com>
 License: Under the same license as Vim itself (see :help license)
 
@@ -94,6 +94,8 @@ Changelog					*stickykey-changelog* {{{
 0.0.1:
 - refactoring
 - add experimental options to g:stickykey_when_no_escaped_key ("input", "mapping")
+0.0.1a:
+- fix error: j is undefined value
 
 }}}
 ==============================================================================
