@@ -21,27 +21,26 @@ let s:SHIFT = 'S'
 let s:COMMAND = 'D'    " Only Macintosh has this key.
 
 function! stickykey#ctrl() "{{{
-    return s:do_sticky(s:CTRL)
+    return s:do_sticky(s:CTRL, g:stickykey_when_no_escaped_key)
 endfunction "}}}
 
 function! stickykey#alt() "{{{
-    return s:do_sticky(s:ALT)
+    return s:do_sticky(s:ALT, g:stickykey_when_no_escaped_key)
 endfunction "}}}
 
 function! stickykey#shift() "{{{
-    return s:do_sticky(s:SHIFT)
+    return s:do_sticky(s:SHIFT, g:stickykey_when_no_escaped_key)
 endfunction "}}}
 
 function! stickykey#command() "{{{
-    return s:do_sticky(s:COMMAND)
+    return s:do_sticky(s:COMMAND, g:stickykey_when_no_escaped_key)
 endfunction "}}}
 
 
 
-function! s:do_sticky(key_id) "{{{
-    let opt = g:stickykey_when_no_escaped_key
-    if opt !~# '^\%(nop\|thru\|again\|input\|mapping\)$'
-        call s:warn(opt . ": invalid g:stickykey_when_no_escaped_key's value")
+function! s:do_sticky(key_id, opt) "{{{
+    if a:opt !~# '^\%(nop\|thru\|again\|input\|mapping\)$'
+        call s:warn(a:opt . ": invalid g:stickykey_when_no_escaped_key's value")
         return ''
     endif
 
@@ -49,18 +48,18 @@ function! s:do_sticky(key_id) "{{{
         " TODO When getchar(1) is false.
         let c = s:getchar()
         if getcharmod()    " If key is escaped with meta key.
-            if opt ==# 'nop'
+            if a:opt ==# 'nop'
                 return ''
-            elseif opt ==# 'thru'
+            elseif a:opt ==# 'thru'
                 return c
-            elseif opt ==# 'again'
+            elseif a:opt ==# 'again'
                 continue
-            elseif opt ==# 'input'
+            elseif a:opt ==# 'input'
                 return s:meta_key(s:get_charmod_key_id(), c)
-            elseif opt ==# 'mapping'
+            elseif a:opt ==# 'mapping'
                 return s:meta_key(a:key_id, c)
             else
-                call s:warn(opt . ": invalid g:stickykey_when_no_escaped_key's value")
+                call s:warn(a:opt . ": invalid g:stickykey_when_no_escaped_key's value")
                 return ''
             endif
         else
