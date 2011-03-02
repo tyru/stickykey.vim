@@ -18,7 +18,7 @@ set cpo&vim
 let s:CTRL = 'C'
 let s:ALT = 'M'
 let s:SHIFT = 'S'
-let s:COMMAND = 'D'    " Only Macintosh has this key.
+let s:COMMAND = 'D'    " Only *Macintosh PC* has this key.
 
 function! stickykey#ctrl(...) "{{{
     return s:do_sticky(s:CTRL, (a:0 ? a:1 : g:stickykey_when_no_escaped_key))
