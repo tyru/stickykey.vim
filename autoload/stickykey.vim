@@ -20,56 +20,56 @@ let s:ALT = 'M'
 let s:SHIFT = 'S'
 let s:COMMAND = 'D'    " Only Macintosh has this key.
 
-function! stickykey#ctrl() "{{{
-    return s:do_sticky(s:CTRL, g:stickykey_when_no_escaped_key)
+function! stickykey#ctrl(...) "{{{
+    return s:do_sticky(s:CTRL, (a:0 ? a:1 : g:stickykey_when_no_escaped_key))
 endfunction "}}}
 function! stickykey#ctrl_nop() "{{{
-    return s:do_sticky(s:CTRL, "nop")
+    return stickykey#ctrl("nop")
 endfunction "}}}
 function! stickykey#ctrl_thru() "{{{
-    return s:do_sticky(s:CTRL, "thru")
+    return stickykey#ctrl("thru")
 endfunction "}}}
 function! stickykey#ctrl_again() "{{{
-    return s:do_sticky(s:CTRL, "again")
+    return stickykey#ctrl("again")
 endfunction "}}}
 
-function! stickykey#alt() "{{{
-    return s:do_sticky(s:ALT, g:stickykey_when_no_escaped_key)
+function! stickykey#alt(...) "{{{
+    return s:do_sticky(s:ALT, (a:0 ? a:1 : g:stickykey_when_no_escaped_key))
 endfunction "}}}
 function! stickykey#alt_nop() "{{{
-    return s:do_sticky(s:ALT, "nop")
+    return stickykey#alt("nop")
 endfunction "}}}
 function! stickykey#alt_thru() "{{{
-    return s:do_sticky(s:ALT, "thru")
+    return stickykey#alt("thru")
 endfunction "}}}
 function! stickykey#alt_again() "{{{
-    return s:do_sticky(s:ALT, "again")
+    return stickykey#alt("again")
 endfunction "}}}
 
-function! stickykey#shift() "{{{
-    return s:do_sticky(s:SHIFT, g:stickykey_when_no_escaped_key)
+function! stickykey#shift(...) "{{{
+    return s:do_sticky(s:SHIFT, (a:0 ? a:1 : g:stickykey_when_no_escaped_key))
 endfunction "}}}
 function! stickykey#shift_nop() "{{{
-    return s:do_sticky(s:SHIFT, "nop")
+    return stickykey#shift("nop")
 endfunction "}}}
 function! stickykey#shift_thru() "{{{
-    return s:do_sticky(s:SHIFT, "thru")
+    return stickykey#shift("thru")
 endfunction "}}}
 function! stickykey#shift_again() "{{{
-    return s:do_sticky(s:SHIFT, "again")
+    return stickykey#shift("again")
 endfunction "}}}
 
-function! stickykey#command() "{{{
-    return s:do_sticky(s:COMMAND, g:stickykey_when_no_escaped_key)
+function! stickykey#command(...) "{{{
+    return s:do_sticky(s:COMMAND, (a:0 ? a:1 : g:stickykey_when_no_escaped_key))
 endfunction "}}}
 function! stickykey#command_nop() "{{{
-    return s:do_sticky(s:COMMAND, "nop")
+    return stickykey#command("nop")
 endfunction "}}}
 function! stickykey#command_thru() "{{{
-    return s:do_sticky(s:COMMAND, "thru")
+    return stickykey#command("thru")
 endfunction "}}}
 function! stickykey#command_again() "{{{
-    return s:do_sticky(s:COMMAND, "again")
+    return stickykey#command("again")
 endfunction "}}}
 
 
