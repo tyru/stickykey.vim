@@ -15,9 +15,9 @@ set cpo&vim
 "    because submode.vim does not support
 "    mapping with arpeggio.vim
 
-let s:CTRL = 'C'
-let s:ALT = 'M'
-let s:SHIFT = 'S'
+let s:CTRL    = 'C'
+let s:ALT     = 'M'
+let s:SHIFT   = 'S'
 let s:COMMAND = 'D'    " Only *Macintosh PC* has this key.
 
 function! stickykey#ctrl(...) "{{{
