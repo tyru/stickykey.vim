@@ -23,17 +23,53 @@ let s:COMMAND = 'D'    " Only Macintosh has this key.
 function! stickykey#ctrl() "{{{
     return s:do_sticky(s:CTRL, g:stickykey_when_no_escaped_key)
 endfunction "}}}
+function! stickykey#ctrl_nop() "{{{
+    return s:do_sticky(s:CTRL, "nop")
+endfunction "}}}
+function! stickykey#ctrl_thru() "{{{
+    return s:do_sticky(s:CTRL, "thru")
+endfunction "}}}
+function! stickykey#ctrl_again() "{{{
+    return s:do_sticky(s:CTRL, "again")
+endfunction "}}}
 
 function! stickykey#alt() "{{{
     return s:do_sticky(s:ALT, g:stickykey_when_no_escaped_key)
+endfunction "}}}
+function! stickykey#alt_nop() "{{{
+    return s:do_sticky(s:ALT, "nop")
+endfunction "}}}
+function! stickykey#alt_thru() "{{{
+    return s:do_sticky(s:ALT, "thru")
+endfunction "}}}
+function! stickykey#alt_again() "{{{
+    return s:do_sticky(s:ALT, "again")
 endfunction "}}}
 
 function! stickykey#shift() "{{{
     return s:do_sticky(s:SHIFT, g:stickykey_when_no_escaped_key)
 endfunction "}}}
+function! stickykey#shift_nop() "{{{
+    return s:do_sticky(s:SHIFT, "nop")
+endfunction "}}}
+function! stickykey#shift_thru() "{{{
+    return s:do_sticky(s:SHIFT, "thru")
+endfunction "}}}
+function! stickykey#shift_again() "{{{
+    return s:do_sticky(s:SHIFT, "again")
+endfunction "}}}
 
 function! stickykey#command() "{{{
     return s:do_sticky(s:COMMAND, g:stickykey_when_no_escaped_key)
+endfunction "}}}
+function! stickykey#command_nop() "{{{
+    return s:do_sticky(s:COMMAND, "nop")
+endfunction "}}}
+function! stickykey#command_thru() "{{{
+    return s:do_sticky(s:COMMAND, "thru")
+endfunction "}}}
+function! stickykey#command_again() "{{{
+    return s:do_sticky(s:COMMAND, "again")
 endfunction "}}}
 
 
