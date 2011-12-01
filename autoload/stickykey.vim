@@ -90,9 +90,10 @@ function! s:getcharmod() "{{{
     \   'shift': mod / 2 % 2,
     \   'control': mod / 4 % 2,
     \   'alt': mod / 8 % 2,
-    \   'mousedouble': mod / 16 % 2,
-    \   'mousetriple': mod / 32 % 2,
-    \   'mousequad': mod / 64 % 2,
+    \   'meta': mod / 16 % 2,
+    \   'mousedouble': mod / 32 % 4 is 1,
+    \   'mousetriple': mod / 32 % 4 is 2,
+    \   'mousequad': mod / 32 % 4 is 3,
     \   'command': mod / 128 % 2,
     \}
 endfunction "}}}
