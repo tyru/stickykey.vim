@@ -85,44 +85,16 @@ function! s:getchar(...) "{{{
 endfunction "}}}
 
 function! s:getcharmod() "{{{
-    let charmod = getcharmod()
-    let r = {
-    \   'shift': 0,
-    \   'ctrl': 0,
-    \   'alt': 0,
-    \   'mousedouble': 0,
-    \   'mousetriple': 0,
-    \   'mousequad': 0,
-    \   'command': 0,
+    let mod = getcharmod()
+    return {
+    \   'shift': mod / 2 % 2,
+    \   'control': mod / 4 % 2,
+    \   'alt': mod / 8 % 2,
+    \   'mousedouble': mod / 16 % 2,
+    \   'mousetriple': mod / 32 % 2,
+    \   'mousequad': mod / 64 % 2,
+    \   'command': mod / 128 % 2,
     \}
-    if !charmod    " no flags are set.
-        return r
-    endif
-    let key_table = [
-    \   'shift',
-    \   'ctrl',
-    \   'alt',
-    \   'mousedouble',
-    \   'mousetriple',
-    \   'mousequad',
-    \   'command',
-    \]
-    let i = len(r) - 1
-    while 1
-        let j = float2nr(pow(2, i + 1))
-        if charmod >= j
-            let r[key_table[i]] = 1
-            let charmod -= j
-            if charmod < 0
-                echoerr 'wtf'
-            endif
-        endif
-        if i ==# 0
-            return r
-        endif
-        let i -= 1
-    endwhile
-    echoerr 'never reach here.'
 endfunction "}}}
 
 function! s:get_charmod_key_id() "{{{
